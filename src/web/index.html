@@ -1,19 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="asset/css/index.css">
+
 </head>
+
 <body>
     <div id="title">Simple Online Game</div>
     <div id="login">
         <form id="login-form" action="">
             <input type="text" name="account" placeholder="Account">
             <input type="password" name="password" placeholder="Password">
-            <button>LOGIN</button>or<button>SIGN UP</button>
+            <button>LOGIN</button>or
+            <button onclick="myFunction(); return false;">SIGN UP</button>
         </form>
     </div>
-
+    <div id="signup">
+        <form id="signup-form" action="">
+            <h1>註冊帳號</h1>
+            <table>
+                <tr>
+                    <td>帳號名稱</td>
+                    <td>
+                        <input type="text" name="account" placeholder="Account">
+                    </td>
+                </tr>
+                <tr>
+                    <td>密碼</td>
+                    <td>
+                        <input type="password" name="password" placeholder="Password">
+                    </td>
+                </tr>
+                <tr>
+                    <td>確認密碼</td>
+                    <td>
+                        <input type="password" name="check-password" placeholder="Check Password">
+                    </td>
+                </tr>
+                <tr>
+                    <td>暱稱</td>
+                    <td>
+                        <input type="text" name="nickname" placeholder="Nickname">
+                    </td>
+                </tr>
+                <tr>
+                    <td>生日</td>
+                    <td>
+                        <input type="date" name="birthday" placeholder="Birthday">
+                    </td>
+                </tr>
+                <tr>
+                    <td>性別</td>
+                    <td>
+                        <select name="gender" id="select-gender">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:right;">
+                        <button>SIGN UP</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script>
+        var signup = document.getElementById("signup").style;
+        function myFunction() {
+            alert('asdf');
+            signup.visibility="visible";
+            console.log(signup);
+        }
+    </script>
 </body>
+
 </html>

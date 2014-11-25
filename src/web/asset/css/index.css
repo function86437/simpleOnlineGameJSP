@@ -4,6 +4,7 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  text-shadow: 1px 1px black;
 }
 ::-webkit-input-placeholder {
    color: white;
@@ -21,16 +22,15 @@ html {
    color: white;
 }
 #title {
-    margin-top: 100px;
+    margin-top: 50px;
     margin-bottom: 100px;
     color: white;
     text-align: center;
     font-size: 80px;
-    text-shadow: 1px 1px black;
 }
 
 #login {
-    width: 800px;
+    width: 850px;
     margin: 0 auto;
 }
 
@@ -42,7 +42,7 @@ html {
     border-radius: 10px;
     background: rgba(0,0,0,0.4);
 }
-#login-form > input {
+ input {
     margin-left: 10px;
     font-size: 20px;
     padding: 10px;
@@ -51,8 +51,12 @@ html {
     border-radius: 10px;
     border: 3px solid white;
     background: none;
+    transition: 0.1s linear;
 }
-#login-form > button {
+ input:hover {
+    background-color: rgba(255, 255, 255, 0.28);
+}
+ button {
     margin-left: 10px;
     margin-right: 10px;
     color: white;
@@ -62,4 +66,31 @@ html {
     border-radius: 10px;
     width: 80px;
     height: auto;
+    transition: 0.1s linear;
+}
+ button:hover{
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.28);
+}
+select {
+    margin-left: 10px;
+    padding: 5px;
+    height: 40px;
+    border-radius: 5px;
+    border: 3px solid white;
+    background: white;
+    transition: 0.1s linear;
+}
+#signup {
+    visibility: hidden;
+    margin: 0 auto;
+    width: 380px;
+}
+
+#signup-form {
+    color: white;
+    border-style: none;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.4);
 }
