@@ -3,7 +3,7 @@
     if(isset($_POST['account']) && isset($_POST['password'])){
         $account = $_POST['account'];
         $password = $_POST['password'];
-
+        $password = md5($password);
 
         require_once __DIR__ . '/DBConnect.php';
 

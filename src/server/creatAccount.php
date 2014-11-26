@@ -12,7 +12,7 @@
         $db = new DB_CONNECT();
 
 
-        $sql = mysqli_query($db->connect(),"INSERT INTO account(account, password, nickname, birthday, gender) VALUES('$account', '$password', '$nickname', '$birthday', '$gender')");
+        $sql = mysqli_query($db->connect(),"INSERT INTO account(account, password, nickname, birthday, gender) VALUES('$account', '".md5($password)."', '$nickname', '$birthday', '$gender')");
 
         if($sql != false){
                 echo "<script>";
