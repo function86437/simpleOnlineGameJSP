@@ -3,9 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Simple Online Game</title>
+    <link rel="stylesheet" href="asset/css/main.css">
     <link rel="stylesheet" href="asset/css/index.css">
 
+    <script type="text/javascript" src="asset/js/index.js"></script>
 </head>
 
 <body>
@@ -14,15 +16,19 @@
 
         <form id="login-form" action="../server/verifyAccount.php" method="post">
 
+
             <input type="text" name="account" placeholder="Account">
             <input type="password" name="password" placeholder="Password">
             <button>LOGIN</button>or
             <button onclick="myFunction(); return false;">SIGN UP</button>
         </form>
     </div>
+    <br>
     <div id="signup">
 
+
         <form id="signup-form" action="../server/creatAccount.php" method="post">
+
 
             <h1>註冊帳號</h1>
             <table>
@@ -73,14 +79,6 @@
             </table>
         </form>
     </div>
-    <script>
-        var signup = document.getElementById("signup").style;
-        function myFunction() {
-            alert('asdf');
-            signup.visibility="visible";
-            console.log(signup);
-        }
-    </script>
 </body>
 
 </html>
