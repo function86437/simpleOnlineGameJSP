@@ -1,18 +1,4 @@
-html {
-  background: url(../img/index_bg.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  text-shadow: 1px 1px black;
-}
-#title {
-    margin-top: 50px;
-    margin-bottom: 100px;
-    color: white;
-    text-align: center;
-    font-size: 80px;
-}
+
 
 .list {
     float: left;
@@ -72,10 +58,36 @@ html {
 }
 
 #room-list {
+    float: left;
     width: 760px;
 }
 
 .list-row:hover {
     background: rgba(255,255,255,0.5);
     cursor: pointer;
+}
+
+#user-list {
+    border-radius: 10px;
+    float: left;
+    width: 240px;
+    height: 400px;
+    color: white;
+    padding: 20px;
+    margin: 30px;
+    background: rgba(255,255,255,0.15);
+}
+
+#scroll {
+    padding-left: 10px;
+    width: 230px;
+    height: 80%;
+    overflow-y: scroll;
+}
+#scroll>p:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+#user-list-title {
+    height: 10%;
 }

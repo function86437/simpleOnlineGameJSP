@@ -1,11 +1,4 @@
-html {
-  background: url(../img/index_bg.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  text-shadow: 1px 1px black;
-}
+
 ::-webkit-input-placeholder {
    color: white;
 }
@@ -21,13 +14,7 @@ html {
 :-ms-input-placeholder {
    color: white;
 }
-#title {
-    margin-top: 50px;
-    margin-bottom: 100px;
-    color: white;
-    text-align: center;
-    font-size: 80px;
-}
+
 
 #login {
     width: 850px;
