@@ -6,10 +6,47 @@ html {
   background-size: cover;
   text-shadow: 1px 1px black;
 }
+*:focus{
+    outline: 0;
+}
+
+
+::-webkit-input-placeholder {
+   color: white;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: white;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: white;
+}
+
+:-ms-input-placeholder {
+   color: white;
+}
+
 #title {
     margin-top: 50px;
     margin-bottom: 50px;
     color: white;
     text-align: center;
     font-size: 80px;
+}
+ button {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+    padding: 5px;
+    background: none;
+    border-style: solid;
+    border-radius: 10px;
+    width: 90px;
+    height: auto;
+    transition: 0.1s linear;
+}
+ button:hover{
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.28);
 }

@@ -1,20 +1,4 @@
 
-::-webkit-input-placeholder {
-   color: white;
-}
-
-:-moz-placeholder { /* Firefox 18- */
-   color: white;
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-   color: white;
-}
-
-:-ms-input-placeholder {
-   color: white;
-}
-
 
 #login {
     width: 850px;
@@ -43,22 +27,7 @@
  input:hover {
     background-color: rgba(255, 255, 255, 0.28);
 }
- button {
-    margin-left: 10px;
-    margin-right: 10px;
-    color: white;
-    padding: 5px;
-    background: none;
-    border-style: solid;
-    border-radius: 10px;
-    width: 80px;
-    height: auto;
-    transition: 0.1s linear;
-}
- button:hover{
-    cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.28);
-}
+
 select {
     margin-left: 10px;
     padding: 5px;
