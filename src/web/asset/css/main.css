@@ -1,0 +1,15 @@
+html {
+  background: url(../img/index_bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-shadow: 1px 1px black;
+}
+#title {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: white;
+    text-align: center;
+    font-size: 80px;
+}
