@@ -5,7 +5,7 @@
     } else {
         require_once __DIR__ . '/DBConnect.php';
         $db = new DB_CONNECT();
-        $sql = mysqli_query("SELECT * from lobby");
+        $sql = mysqli_query($db,"SELECT * from lobby");
 
         if($sql != false){
         } else {

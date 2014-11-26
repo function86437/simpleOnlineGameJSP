@@ -3,7 +3,6 @@
  * A class file to connect to database
  */
 class DB_CONNECT {
-
     // constructor
     function __construct() {
         // connecting to database
@@ -11,10 +10,10 @@ class DB_CONNECT {
     }
 
     // destructor
-    function __destruct() {
+    /*function __destruct() {
         // closing db connection
         $this->close();
-    }
+    }*/
 
     /**
      * Function to connect with database
@@ -24,10 +23,10 @@ class DB_CONNECT {
         require_once __DIR__ . '/DBconfig.php';
 
         // Connecting to mysql database
-        $con = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD) or die(mysql_error());
+        $con = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD) or die(mysqli_error());
 
         // Selecing database
-        $db = mysqli_select_db(DB_DATABASE) or die(mysql_error()) or die(mysql_error());
+        $db = mysqli_select_db($con,DB_DATABASE) or die(mysqli_error()) or die(mysqli_error());
 
         // returing connection cursor
         return $con;
@@ -36,10 +35,11 @@ class DB_CONNECT {
     /**
      * Function to close db connection
      */
-    function close() {
+    /*function close() {
         // closing db connection
-        mysql_close();
-    }
+        mysqli_close($con);
+    }*/
 
 }
+
 ?>
