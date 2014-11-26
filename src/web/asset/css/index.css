@@ -1,0 +1,96 @@
+html {
+  background: url(../img/index_bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-shadow: 1px 1px black;
+}
+::-webkit-input-placeholder {
+   color: white;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: white;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: white;
+}
+
+:-ms-input-placeholder {
+   color: white;
+}
+#title {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    color: white;
+    text-align: center;
+    font-size: 80px;
+}
+
+#login {
+    width: 850px;
+    margin: 0 auto;
+}
+
+#login-form {
+    color: white;
+    border-style: none;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.4);
+}
+ input {
+    margin-left: 10px;
+    font-size: 20px;
+    padding: 10px;
+    color: white;
+    height: 20px;
+    border-radius: 10px;
+    border: 3px solid white;
+    background: none;
+    transition: 0.1s linear;
+}
+ input:hover {
+    background-color: rgba(255, 255, 255, 0.28);
+}
+ button {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+    padding: 5px;
+    background: none;
+    border-style: solid;
+    border-radius: 10px;
+    width: 80px;
+    height: auto;
+    transition: 0.1s linear;
+}
+ button:hover{
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.28);
+}
+select {
+    margin-left: 10px;
+    padding: 5px;
+    height: 40px;
+    border-radius: 5px;
+    border: 3px solid white;
+    background: white;
+    transition: 0.1s linear;
+}
+#signup {
+    visibility: hidden;
+    margin: 0 auto;
+    width: 380px;
+}
+
+#signup-form {
+    color: white;
+    border-style: none;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.4);
+}
