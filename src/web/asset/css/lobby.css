@@ -30,6 +30,7 @@
     border-radius: 10px;
     background: rgba(0,0,0,0.7);
     width: 1100px;
+    position: relative;
 }
 
 .number {
@@ -60,6 +61,7 @@
 #room-list {
     float: left;
     width: 760px;
+    height: 400px;
 }
 
 .list-row:hover {
@@ -90,4 +92,24 @@
 
 #user-list-title {
     height: 10%;
+}
+
+#control {
+    height: 80px;
+    width: 740px;
+    padding: 10px;
+    position: absolute;
+    bottom: 0px;
+}
+#control > input{
+    border: 2px solid white;
+    background: none;
+    color: white;
+    height: 30px;
+    border-radius: 10px;
+    padding-left:   10px;
+}
+
+#logout {
+    float: right;
 }
