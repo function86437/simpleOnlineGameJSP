@@ -6,19 +6,6 @@
     color: white;
 
 }
-
-.pool {
-    *height: 1%; /* IE6 IE7 */
-}
-
-/* Firefox Chrome Safari IE8  */
-.pool:after {
-    clear: left;
-    content: '.';
-    display: block;
-    height: 0;
-    overflow: hidden;
-}
 #colum {
     width: auto;
 
