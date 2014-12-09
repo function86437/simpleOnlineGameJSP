@@ -19,27 +19,33 @@ if(isset($_POST['account']) && isset($_POST['password']) && isset($_POST['email'
     $dbcon = new DBConnect();
     $sql = "SELECT * FROM account WHERE account = ?";
 
+    //row count , if result = 1 , then had the same account
     $result = $dbcon->query($sql , array($account))->rowCount();
 
 
     if($result != null || $result != false){
         if($result == 1){
-            echo "Duplicate account";
+            echo "false";
+            //echo "Duplicate account";
         }
     } else {
+
+        // insert account
         $sql = "INSERT INTO account(account, password, email, nickname, birthday, gender) VALUES (?, ?, ?, ?, ?, ?)";
 
             $resultInsert = $dbcon->query($sql, array($account, $password, $email, $nickname, $birthday, $gender));
             if($resultInsert != null || $resultInsert != false) {
-                echo "Succeed";
+                echo "true";
             } else {
-                echo "Insert account query failed";
+                echo "false";
+                //echo "Insert account query failed";
             }
     }
 
 
 } else {
-    echo "No Post data";
+    echo "false";
+    //echo "No Post data";
 }
 
 
