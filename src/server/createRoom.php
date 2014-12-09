@@ -11,7 +11,7 @@ session_start();
 if(!isset($_SESSION['login'])){
 
     //redirect to index.html
-    header(Location:../web/index.html);
+    header("Location:../web/index.html");
 } else{
 
 
@@ -35,11 +35,12 @@ if(!isset($_SESSION['login'])){
 
             echo "true";
 
+            //$result->commit();
             //roomID by last insert command
-            $roomID = $result->lastInsertId();
+            //$roomID = $result->lastInsertId();
 
             //set roomName as a session variable, one player can only create on room.
-            $_SESSION['roomID'] = $roomName;
+            //$_SESSION['roomID'] = $roomName;
 
         } else {
             echo "false";

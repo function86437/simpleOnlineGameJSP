@@ -14,6 +14,7 @@ if($_SESSION['login'] === true){
     <title>Lobby - Simple Online Game</title>
     <link rel="stylesheet" href="asset/css/main.css">
     <link rel="stylesheet" href="asset/css/lobby.css">
+    <script type="text/javascript" src="asset/js/generalAjax.js"></script>
     <script src="asset/js/lobby.js"></script>
 </head>
 
@@ -44,11 +45,11 @@ if($_SESSION['login'] === true){
             </div>
         </div>
         <div id="control">
-            <input type="text" placeholder="Room name">
-            <button>Creat Room</button>
-            <button>Refresh List</button>
-            <button>Leaderboard</button>
-            <button id="logout" onclick="logout();">Logout</button>
+            <input type="text" id="createRoomName" placeholder="Room name">
+            <button id="create-room-btn">Create Room</button>
+            <button id="refresh-list-btn">Refresh List</button>
+            <button id="leaderboard-btn">Leaderboard</button>
+            <button id="logout-btn" onclick="logout();">Logout</button>
         </div>
 
         <div id="user-list">
@@ -61,6 +62,12 @@ if($_SESSION['login'] === true){
                 <p>username</p>
                 <p>username</p>
             </div>
+        </div>
+    </div>
+    <div class="alert">
+        <div id="alert-box">
+            <div id="alert-title"></div>
+            <button id="alert-btn">OK</button>
         </div>
     </div>
 </body>
