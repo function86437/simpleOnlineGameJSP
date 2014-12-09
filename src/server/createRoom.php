@@ -29,7 +29,7 @@ if(!isset($_SESSION['login'])){
 
         $sql = "INSERT INTO lobby(room_name, game_mode, player1_id, player2_id, status) VALUES (?, ?, ?, ?, ?)";
 
-        $result = $dbcon->query($sql, array($roomName, $gameMode, $player1ID, null, waiting));
+        $result = $dbcon->query($sql, array($roomName, $gameMode, $player1ID, null, "waiting"));
 
         if($result != null || $result != false) {
 

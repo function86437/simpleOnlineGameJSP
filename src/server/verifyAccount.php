@@ -35,6 +35,7 @@ if(isset($_POST['account']) && isset($_POST['password'])){
         echo 'Query failed';
     }
 
+    //DB connection close
     $dbcon->close();
 
 } else {
