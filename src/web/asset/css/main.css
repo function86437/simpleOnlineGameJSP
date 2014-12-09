@@ -55,7 +55,7 @@ html {
     padding: 5px;
     background: none;
     border-style: solid;
-     border-color: white;
+    border-color: white;
     border-radius: 10px;
     width: 90px;
     height: auto;
@@ -66,3 +66,62 @@ html {
     color: black;
     background-color: rgba(255, 255, 255, 1);
 }
+
+.alert {
+    display: none;
+    z-index: 100;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background:rgba(0,0,0,0.6);
+}
+
+#alert-box {
+    margin: 0 auto;
+    position: relative;
+    top: 300px;
+    padding: 50px;
+    width: 250px;
+    height: 100px;
+    background: white;
+    color: black;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+#alert-title {
+    margin-bottom: 25px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 35px;
+}
+
+#alert-btn {
+    width: 100px;
+    height: 40px;
+    font-size:20px;
+    background: green;
+    border: none;
+    transition: 0.05s linear;
+}
+#alert-btn:hover {
+    margin-top: -3px;
+    font-size:23px;
+    width:106px;
+    height: 46px;
+}
+#alert-btn:active {
+    margin-top: 0px;
+    width: 100px;
+    height: 40px;
+    font-size:20px;
+    background: green;
+    border: none;
+    transition:none;
+}
+
+
