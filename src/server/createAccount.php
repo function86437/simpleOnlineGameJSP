@@ -43,6 +43,8 @@ if(isset($_POST['account']) && isset($_POST['password']) && isset($_POST['email'
     }
 
 
+    //DB connection close
+    $dbcon->close();
 } else {
     echo "false";
     //echo "No Post data";
