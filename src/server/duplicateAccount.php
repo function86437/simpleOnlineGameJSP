@@ -12,14 +12,18 @@ if(isset($_POST['account'])){
     //new PDO connection
     $dbcon = new DBConnect();
 
-    $sql = "SELECT count(id) FROM account WHERE account = ?";
+    $sql = "SELECT * FROM account WHERE account = ?";
 
-    $result = $dbcon->query($sql , array($account));
+    $result = $dbcon->query($sql , array($account))->rowCount();
 
     if($result != null || $result != false){
-        echo $result->count(id);
+        if($result == 1){
+            echo "true";
+        } else {
+            echo "false";
+        }
     } else {
-        echo 'query failed';
+        echo "false";
     }
 } else {
     echo 'No Post variables';
