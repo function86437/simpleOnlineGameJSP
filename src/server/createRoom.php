@@ -2,7 +2,7 @@
 
 /*
 *   Create room
-*   @verion 1.1
+*   @verion 1.2
 */
 
 session_start();
@@ -33,7 +33,7 @@ if(!isset($_SESSION['login'])){
 
         if($result != null || $result != false) {
 
-            echo "Succeed";
+            echo "true";
 
             //roomID by last insert command
             $roomID = $result->lastInsertId();
@@ -42,14 +42,16 @@ if(!isset($_SESSION['login'])){
             $_SESSION['roomID'] = $roomName;
 
         } else {
-            echo 'Query failed';
+            echo "false";
+            //echo 'Query failed';
         }
 
         //DB connection close
         $dbcon->close();
 
     } else {
-        echo "No Post data";
+        echo "false";
+        //echo "No Post data";
     }
 }
 
