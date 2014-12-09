@@ -23,6 +23,8 @@ var clickBirthdayCount = false;
 window.onload = function () {
     signup = document.getElementById("signup");
     signupBtn = document.getElementById("signupBtn");
+    loginAccount = document.getElementsByName("account")[0];
+    loginPwd = document.getElementsByName("password")[0];
     signUpAccount = document.getElementsByName("account")[1];
     signUpPwd = document.getElementsByName("password")[1];
     signUpCheckPwd = document.getElementsByName("check-password")[0];
@@ -67,7 +69,7 @@ function verifySignUpPwd() {
         signUpPwd.className = "invalid";
         signUpCheckPwd.className = "invalid";
         signUpContent.password = "";
-    }else if (signUpCheckPwd.value === signUpPwd.value) {
+    } else if (signUpCheckPwd.value === signUpPwd.value) {
         signUpPwd.className = "valid";
         signUpCheckPwd.className = "valid";
         signUpContent.password = String(CryptoJS.MD5(signUpPwd.value));
@@ -135,9 +137,49 @@ function submit() {
 
 function showAlert(title) {
     alertContent.title = title;
-    alertContent.dom.childNodes[1].childNodes[1].innerHTML =  alertContent.title;
+    alertContent.dom.childNodes[1].childNodes[1].innerHTML = alertContent.title;
     alertContent.dom.style.display = "inline";
 }
-function closeAlert(){
+
+function closeAlert() {
+    switch (alertContent.title) {
+    case "Success!":
+        signup.style.visibility = "hidden";
+        signUpContent.account = "";
+        signUpContent.password = "";
+        signUpContent.email = "";
+        signUpContent.nickname = "";
+        signUpContent.birthday = "";
+        signUpContent.gender = "Male";
+        signUpAccount.value = "";
+        signUpPwd.value = "";
+        signUpCheckPwd.value = "";
+        email.value = "";
+        nickname.value = "";
+        birthday.value = "";
+        gender.value = "Male";
+        signUpAccount.className = "";
+        signUpPwd.className = "";
+        signUpCheckPwd.className = "";
+        email.className = "";
+        nickname.className = "";
+        birthday.className = "";
+        break;
+    case "Fail!":
+        break;
+    default:
+        break;
+    }
     alertContent.dom.style.display = "none";
+}
+
+function login() {
+    if (loginAccount.value === "" || loginAccount.value.search(/^[^%&`』 <>,;=?$\x22]+$/) == -1) {
+        loginAccount.className = "invalid";
+    } else if (loginPwd.value === "") {
+        loginPwd.className = "invalid";
+    } else {
+        loginPwd.value = String(CryptoJS.MD5(loginPwd.value));
+        document.forms["login-form"].submit();
+    }
 }

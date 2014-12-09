@@ -18,13 +18,13 @@
         <form id="login-form" action="../server/verifyAccount.php" method="post">
             <input type="text" name="account" placeholder="Account">
             <input type="password" name="password" placeholder="Password">
-            <button>LOGIN</button>or
-            <button onclick="myFunction(); return false;">SIGN UP</button>
+            <button type="button" onclick="login();">LOGIN</button>or
+            <button type="button" onclick="myFunction();">SIGN UP</button>
         </form>
     </div>
     <br>
     <div id="signup">
-        <form id="signup-form" action="../server/createAccount.php" method="post">
+        <form id="signup-form">
             <h1>註冊帳號</h1>
             <table>
                 <tr>
