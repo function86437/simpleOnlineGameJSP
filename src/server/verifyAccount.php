@@ -2,7 +2,7 @@
 
 /*
 *   Verify User Account
-*   @verion 1.0
+*   @verion 1.1
 */
 
 session_start();
@@ -25,6 +25,7 @@ if(isset($_POST['account']) && isset($_POST['password'])){
         echo $result->id ;
 
         //session variables
+        $_SESSION['login'] = true;
         $_SESSION['id'] = $result->id;
         $_SESSION['account'] = $account;
 
