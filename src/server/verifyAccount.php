@@ -2,7 +2,7 @@
 
 /*
 *   Verify User Account
-*   @verion 1.1
+*   @verion 1.2
 */
 
 session_start();
@@ -24,13 +24,25 @@ if(isset($_POST['account']) && isset($_POST['password'])){
     if($result != null || $result != false) {
         echo $result->id ;
 
-        //session variables
-        $_SESSION['login'] = true;
-        $_SESSION['id'] = $result->id;
-        $_SESSION['account'] = $account;
+        //add to onlineuser list
+        $sql = "INSERT INTO onlineuser(account_id) VALUES (?)";
 
-        //redirect to lobby
-        header('Location:../web/lobby.php');
+        $resultInsert = $dbcon->query($sql, array($result->id));
+
+        if($resultInsert != null || $resultInsert != false) {
+            //session variables
+            $_SESSION['login'] = true;
+            $_SESSION['id'] = $result->id;
+            $_SESSION['account'] = $account;
+
+            //redirect to lobby
+            header('Location:../web/lobby.php');
+
+        } else {
+            echo 'Query failed';
+        }
+
+
     } else {
         echo 'Query failed';
     }
