@@ -14,6 +14,7 @@ if($_SESSION['login'] === true){
     <title>Lobby - Simple Online Game</title>
     <link rel="stylesheet" href="asset/css/main.css">
     <link rel="stylesheet" href="asset/css/lobby.css">
+    <script src="asset/js/lobby.js"></script>
 </head>
 
 <body>
@@ -47,7 +48,7 @@ if($_SESSION['login'] === true){
             <button>Creat Room</button>
             <button>Refresh List</button>
             <button>Leaderboard</button>
-            <button id="logout">Logout</button>
+            <button id="logout" onclick="logout();">Logout</button>
         </div>
 
         <div id="user-list">
