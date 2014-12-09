@@ -1,7 +1,7 @@
 <?php
 /*
 *   createAccount
-*   @version 1.0
+*   @version 1.1
 */
 
 if(isset($_POST['account']) && isset($_POST['password']) && isset($_POST['email']) && isset($_POST['nickname']) && isset($_POST['birthday']) && isset($_POST['gender'])){
