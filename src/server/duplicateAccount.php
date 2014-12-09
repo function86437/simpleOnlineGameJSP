@@ -25,6 +25,9 @@ if(isset($_POST['account'])){
     } else {
         echo "true";
     }
+
+    //DB connection close
+    $dbcon->close();
 } else {
     echo 'No Post variables';
 }
