@@ -35,8 +35,11 @@ if(!isset($_SESSION['login'])){
 
             echo "Succeed";
 
+            //roomID by last insert command
+            $roomID = $result->lastInsertId();
+
             //set roomName as a session variable, one player can only create on room.
-            $_SESSION['roomName'] = $roomName;
+            $_SESSION['roomID'] = $roomName;
 
         } else {
             echo 'Query failed';
