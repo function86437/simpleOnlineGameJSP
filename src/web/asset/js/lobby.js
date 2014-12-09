@@ -16,9 +16,7 @@ document.addEventListener("click", function (Event) {
     console.log(Event.target.id);
     switch (Event.target.id) {
     case "create-room-btn":
-            alert("asdf");
         createRoom();
-
         break;
     case "refresh-list-btn":
         break;
@@ -51,6 +49,11 @@ function createRoom() {
         }
     });
 }
+function showRoom(){
+    ajaxImple("../server/showRoom.php", "POST", "" , function (response) {
+        console.log(response);
+    });
+}
 
 function showAlert(title) {
     alertContent.title = title;
@@ -59,5 +62,8 @@ function showAlert(title) {
 }
 
 function closeAlert() {
-alertContent.dom.style.display = "none";
+    if(alertContent.title==="Success!"){
+
+    }
+    alertContent.dom.style.display = "none";
 }

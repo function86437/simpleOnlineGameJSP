@@ -57,7 +57,7 @@ html {
     border-style: solid;
     border-color: white;
     border-radius: 10px;
-    width: 90px;
+    width: 100px;
     height: auto;
     transition: 0.2s linear;
 }
