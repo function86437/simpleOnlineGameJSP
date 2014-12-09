@@ -1,32 +1,40 @@
 <?php
-    session_start();
-    if(isset($_POST['account']) && isset($_POST['password'])){
-        $account = $_POST['account'];
-        $password = $_POST['password'];
-        $password = md5($password);
 
-        require_once __DIR__ . '/DBConnect.php';
+/*
+*   Verify User Account
+*   @verion 1.0
+*/
 
-        $db = new DB_CONNECT();
+session_start();
 
-        $sql = mysqli_query($db->connect(),"SELECT id FROM account WHERE account = '$account' and password = '$password'");
+if(isset($_POST['account']) && isset($_POST['password'])){
+    $account = $_POST['account'];
+    $password = $_POST['password'];
 
-        if($sql != false){
-            if($rows = mysqli_num_rows($sql)){
-                $_SESSION['user_id'] = $rows['id'];
-                $_SESSION['user_account'] = $rows['account'];
+    require_once __DIR__ . '/DBConnect.php';
 
-                header("Location:../web/lobby.html");
-            } else {
-            echo "<script>alert('帳號或密碼有誤!');</script>";
-            header("Location:../web/index.html");
-            }
-        } else {
-            echo "<script>alert('帳號或密碼有誤!');</script>";
-            header("Location:../web/index.html");
-        }
+    //new PDO connection
+    $dbcon = new DBConnect();
+
+    $sql = "SELECT id FROM account WHERE account = ? AND password = ?";
+
+    //call query method
+    $result = $dbcon->query($sql,array($account,$password));
+
+    if($result != null || $result != false) {
+        echo $result->id ;
+
+        //session variables
+        $_SESSION['id'] = $result->id;
+        $_SESSION['account'] = $account;
 
     } else {
-        echo "No Post value";
+        echo 'Query failed';
     }
+
+    $dbcon->close();
+
+} else {
+    echo "No Post data";
+}
 ?>
