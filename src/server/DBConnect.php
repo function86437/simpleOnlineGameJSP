@@ -59,6 +59,19 @@ class DBConnect {
 
     }
 
+    function query2($sql){
+
+        //In order to avoid sql injection , pdo send twice time for one transcation
+        //first time is sql command
+        $stmt = $this->con->prepare($sql);
+
+        //second time is data
+        $stmt->execute();
+
+        return $stmt;
+
+    }
+
     function close() {
 
         //close db connection

@@ -10,7 +10,7 @@ session_start();
 if(!isset($_SESSION['login'])){
 
     //redirect to index.html
-    header(Location:../web/index.html);
+    header("Location:../web/index.html");
 } else{
 
     require_once __DIR__ . '/DBConnect.php';
@@ -20,7 +20,7 @@ if(!isset($_SESSION['login'])){
 
     $sql = "SELECT * FROM lobby";
 
-    $result = $dbcon->query($sql);
+    $result = $dbcon->query2($sql)->fetchAll(PDO::FETCH_ASSOC);
 
     if($result != null || $result != false) {
 

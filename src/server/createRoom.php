@@ -27,7 +27,7 @@ if(!isset($_SESSION['login'])){
         //new PDO connection
         $dbcon = new DBConnect();
 
-        $sql = "INSERT INTO lobby(room_name, game_mode, player1_id, player2_id, status) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO lobby(room_name, game_mode, player1_id, player2_id, state) VALUES (?, ?, ?, ?, ?)";
 
         $result = $dbcon->query($sql, array($roomName, $gameMode, $player1ID, null, "waiting"));
 
