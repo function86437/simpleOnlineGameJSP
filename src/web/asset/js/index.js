@@ -4,11 +4,9 @@
 var signup,account,password,checkPassword,email,nickname,birthday,gender;
 window.onload = function(){
     signup = document.getElementById("signup");
-
     email=document.getElementsByName("email")[0];
-    email.addEventListener("keypress",verifyEmail);
+    email.addEventListener("keyup",verifyEmail);
 };
-
 
 
 
@@ -16,7 +14,11 @@ window.onload = function(){
 function myFunction() {
     signup.style.visibility = "visible";
 }
-//驗證email正確性
+//驗證輸入資料正確性
 function verifyEmail(){
-    console.log("asdf");
+    if(email.value.search(/^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/)!=-1){
+        email.className="valid";
+    }else{
+        email.className="invalid";
+    }
 }
