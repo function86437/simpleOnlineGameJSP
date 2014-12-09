@@ -1,16 +1,20 @@
 /*jslint browser: true*/
 
 //DOM宣告
-var signup,signupBtn,loginAccount,loginPwd,signUpAccound,signUpPwd,signUpCheckPwd,email,nickname,birthday,gender;
+var signup,signupBtn,loginAccount,loginPwd,signUpAccount,signUpPwd,signUpCheckPwd,email,nickname,birthday,gender;
 var virifyAccount = {
     account:''
 };
 var signUpContent = {
-    account:false,
-    password:false,
-    email:false,
-    nickname:false,
-    birthday:false
+    account:"",
+    password:"",
+    email:"",
+    nickname:"",
+    birthday:"",
+    gender:"Male"
+}
+var alertContent = {
+    title:"";
 }
 //導致髒亂的flag
 var clickBirthdayCount=false;
@@ -23,7 +27,8 @@ window.onload = function(){
     email=document.getElementsByName("email")[0];
     nickname=document.getElementsByName("nickname")[0];
     birthday=document.getElementsByName("birthday")[0];
-    signUpAccount.addEventListener("change",verifySignUpAccount);
+    gender=document.getElementsByName("gender")[0];
+    signUpAccount.addEventListener("input",verifySignUpAccount);
     signUpPwd.addEventListener("input",verifySignUpPwd);
     signUpCheckPwd.addEventListener("input",verifySignUpPwd);
     email.addEventListener("input",verifyEmail);
@@ -42,13 +47,12 @@ function verifySignUpAccount(){
     console.log(signUpAccount.value);
     virifyAccount.account=signUpAccount.value;
     ajaxImple("../server/duplicateAccount.php","POST",virifyAccount,function (response){
-        console.log(response);
-        if(response===true){
+        if(response==="true"&&signUpAccount.value.search(/^[^%&`』 <>,;=?$\x22]+$/)!=-1){
             signUpAccount.className="valid";
-        signUpContent.account=true;
+            signUpContent.account=signUpAccount.value;
         }else{
             signUpAccount.className="invalid";
-        signUpContent.account=false;
+            signUpContent.account="";
         }
     });
 }
@@ -57,34 +61,34 @@ function verifySignUpPwd(){
     if(signUpCheckPwd.value==="" || signUpPwd.value===""){
         signUpPwd.className="invalid";
         signUpCheckPwd.className="invalid";
-        signUpContent.password=false;
+        signUpContent.password="";
     }else if(signUpCheckPwd.value === signUpPwd.value){
         signUpPwd.className="valid";
         signUpCheckPwd.className="valid";
-        signUpContent.password=true;
+        signUpContent.password=signUpPwd.value;
     }else{
         signUpPwd.className="invalid";
         signUpCheckPwd.className="invalid";
-        signUpContent.password=false;
+        signUpContent.password="";
     }
 }
 //驗證輸入資料正確性
 function verifyEmail(){
     if(email.value.search(/^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/)!=-1){
         email.className="valid";
-        signUpContent.email=true;
+        signUpContent.email=email.value;
     }else{
         email.className="invalid";
-        signUpContent.email=false;
+        signUpContent.email="";
     }
 }
 function verifyNickname(){
-    if(nickname.value.search(/^[^%&`』<>,;=?$\x22]+$/)!=-1){
+    if(nickname.value.search(/^[^%&`』 <>,;=?$\x22]+$/)!=-1){
         nickname.className="valid";
-        signUpContent.nickname=true;
+        signUpContent.nickname=nickname.value;
     }else{
         nickname.className="invalid";
-        signUpContent.nickname=false;
+        signUpContent.nickname="";
     }
 }
 function clickBirthday(){
@@ -98,18 +102,23 @@ function clickBirthday(){
 function verifyBirthday(){
     if(birthday.value==""){
         birthday.className="invalid";
-        signUpContent.birthday=false;
+        signUpContent.birthday="";
     }else{
         birthday.className="valid";
-        signUpContent.birthday=true;
+        signUpContent.birthday=birthday.value;
     }
 }
 function submit(){
-    if(signUpContent.account===false||signUpContent.birthday===false
-       ||signUpContent.email===false||signUpContent.password===false
-      ||signUpContent.nickname===false){
+    if(signUpContent.account===""||signUpContent.birthday===""
+       ||signUpContent.email===""||signUpContent.password===""
+      ||signUpContent.nickname===""){
+        console.log("asdf");
         return;
     }else{
+        signUpContent.gender=gender.value;
+        ajaxImple("../server/createAccount.php","POST",virifyAccount,function (response){
 
+
+    });
     }
 }
