@@ -30,7 +30,7 @@ if(isset($_POST['account']) && isset($_POST['password'])){
         $_SESSION['account'] = $account;
 
         //redirect to lobby
-        header('Location:../web/lobby.html');
+        header('Location:../web/lobby.php');
     } else {
         echo 'Query failed';
     }
