@@ -11,7 +11,7 @@ session_start();
 if(!isset($_SESSION['login'])){
 
     //redirect to index.html
-    header(Location:../web/index.html);
+    header("Location:../web/index.html");
 } else{
 
 
