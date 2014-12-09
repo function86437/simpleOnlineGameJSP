@@ -18,12 +18,12 @@ if(isset($_POST['account'])){
 
     if($result != null || $result != false){
         if($result == 1){
-            echo "true";
-        } else {
             echo "false";
+        } else {
+            echo "true";
         }
     } else {
-        echo "false";
+        echo "true";
     }
 } else {
     echo 'No Post variables';
