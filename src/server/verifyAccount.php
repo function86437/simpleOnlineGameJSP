@@ -28,6 +28,8 @@ if(isset($_POST['account']) && isset($_POST['password'])){
         $_SESSION['id'] = $result->id;
         $_SESSION['account'] = $account;
 
+        //redirect to lobby
+        header('Location:../web/lobby.html');
     } else {
         echo 'Query failed';
     }
