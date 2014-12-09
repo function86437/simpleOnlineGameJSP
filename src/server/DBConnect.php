@@ -55,10 +55,7 @@ class DBConnect {
         //second time is data
         $stmt->execute($exepara);
 
-        //result return as a object
-        $result = $stmt->fetch(PDO::FETCH_OBJ);
-
-        return $result;
+        return $stmt;
 
     }
 

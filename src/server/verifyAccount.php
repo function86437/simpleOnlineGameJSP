@@ -18,8 +18,8 @@ if(isset($_POST['account']) && isset($_POST['password'])){
 
     $sql = "SELECT id FROM account WHERE account = ? AND password = ?";
 
-    //call query method
-    $result = $dbcon->query($sql,array($account,$password));
+    //call query method and set result as a object
+    $result = $dbcon->query($sql,array($account,$password))->fetch(PDO::FETCH_OBJ);
 
     if($result != null || $result != false) {
         echo $result->id ;
