@@ -24,6 +24,7 @@ document.addEventListener("click", function (Event) {
         showRoom();
         break;
     case "leaderboard-btn":
+
         break;
     case "alert-btn":
         closeAlert();
@@ -47,7 +48,7 @@ function createRoom() {
         console.log(response);
         if (response === "true") {
             showAlert("Success!");
-            showRoom();
+            document.location.href = "game.php";
         } else {
             showAlert("Fail!");
             showRoom();
