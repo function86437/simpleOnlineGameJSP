@@ -18,7 +18,7 @@ if(!isset($_SESSION['login'])){
     //new PDO connection
     $dbcon = new DBConnect();
 
-    $sql = "SELECT * FROM lobby";
+    $sql = "SELECT lobby.*,`nickname` FROM `account`,`lobby` WHERE account.id=lobby.player1_id";
 
     $result = $dbcon->query2($sql)->fetchAll(PDO::FETCH_ASSOC);
 
