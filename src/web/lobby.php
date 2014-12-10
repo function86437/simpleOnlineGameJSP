@@ -17,6 +17,7 @@ if($_SESSION['login'] === true){
     <script type="text/javascript" src="asset/js/generalAjax.js"></script>
     <script src="asset/js/lobby.js"></script>
     <script src="asset/js/user_list.js"></script>
+    <script src="asset/js/getScore.js"></script>
 </head>
 
 <body>
@@ -36,7 +37,7 @@ if($_SESSION['login'] === true){
             <input type="text" id="createRoomName" placeholder="Room name">
             <button id="create-room-btn">Create Room</button>
             <button id="refresh-list-btn">Refresh List</button>
-            <button id="leaderboard-btn">Leaderboard</button>
+            <button id="leaderboard-btn" onclick="getScore();">Leaderboard</button>
             <button id="logout-btn" onclick="logout();">Logout</button>
         </div>
 
