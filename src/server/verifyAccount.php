@@ -16,7 +16,7 @@ if(isset($_POST['account']) && isset($_POST['password'])){
     //new PDO connection
     $dbcon = new DBConnect();
 
-    $sql = "SELECT id FROM account WHERE account = ? AND password = ?";
+    $sql = "SELECT * FROM account WHERE account = ? AND password = ?";
 
     //call query method and set result as a object
     $result = $dbcon->query($sql,array($account,$password))->fetch(PDO::FETCH_OBJ);
@@ -33,6 +33,7 @@ if(isset($_POST['account']) && isset($_POST['password'])){
             //session variables
             $_SESSION['login'] = true;
             $_SESSION['id'] = $result->id;
+            $_SESSION['nickname'] = $result->nickname;
             $_SESSION['account'] = $account;
 
             //redirect to lobby
