@@ -13,6 +13,8 @@ if($_SESSION['login'] === true){
     <title>Game - Simple Online Game</title>
     <link rel="stylesheet" href="asset/css/main.css">
     <link rel="stylesheet" href="asset/css/game.css">
+    <script src="asset/js/fancywebsocket.js"></script>
+    <script src="asset/js/game.js"></script>
 </head>
 <body>
     <div id="title">Game</div>
