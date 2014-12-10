@@ -16,6 +16,7 @@ if($_SESSION['login'] === true){
     <link rel="stylesheet" href="asset/css/lobby.css">
     <script type="text/javascript" src="asset/js/generalAjax.js"></script>
     <script src="asset/js/lobby.js"></script>
+    <script src="asset/js/user_list.js"></script>
 </head>
 
 <body>
@@ -44,10 +45,7 @@ if($_SESSION['login'] === true){
                 <h3>Online user</h3>
             </div>
             <div id="scroll">
-                <p>username</p>
-                <p>username</p>
-                <p>username</p>
-                <p>username</p>
+
             </div>
         </div>
     </div>
