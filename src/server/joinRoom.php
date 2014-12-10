@@ -27,9 +27,9 @@ if(!isset($_SESSION['login'])){
         $sql = "SELECT lobby.id FROM lobby,account WHERE lobby.player1_id=account.id and account.account=?";
 
         $resultRo = $dbcon->query($sql, array($player1Acc))->fetchAll(PDO::FETCH_COLUMN);
+        echo $resultRo[0];
 
-
-        $sql = "UPDATE lobby SET player2_id=?,status=? WHERE id=?";
+        $sql = "UPDATE lobby SET player2_id=?,state=? WHERE id=?";
 
         $result = $dbcon->query($sql, array($player2ID, "playing", $resultRo[0]));
 

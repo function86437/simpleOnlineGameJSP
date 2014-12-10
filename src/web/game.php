@@ -1,10 +1,10 @@
 <?php
     session_start();
-if($_SESSION['login'] === true){
+    if($_SESSION['login'] === true){
 
-}else{
-    header('Location:../web/index.html');
-}
+    }else{
+        header('Location:../web/index.html');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,5 +44,11 @@ if($_SESSION['login'] === true){
         <div id="send">Send</div>
     </div>
 </div>
+    <div class="alert">
+        <div id="alert-box">
+            <div id="alert-title"></div>
+            <button id="alert-btn">Cancel</button>
+        </div>
+    </div>
 </body>
 </html>

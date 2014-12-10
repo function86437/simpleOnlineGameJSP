@@ -45,9 +45,6 @@ if($_SESSION['login'] === true){
             </div>
             <div id="scroll">
                 <p>username</p>
-                <p>username</p>
-                <p>username</p>
-                <p>username</p>
             </div>
         </div>
     </div>

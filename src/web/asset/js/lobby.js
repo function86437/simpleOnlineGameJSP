@@ -117,5 +117,16 @@ function closeAlert() {
     alertContent.dom.style.display = "none";
 }
 function joinRoom(event){
-    console.log(event.id);
+//    "String(event.childNodes[3].innerHTML)"
+    var join = {
+        player1_id:"1234asdf"
+    };
+    ajaxImple("../server/joinRoom.php", "POST", join, function (response) {
+        console.log(response)
+        if (response === "true") {
+            showAlert("Success!");
+        } else {
+            showAlert("Fail!");
+        }
+    });
 }
