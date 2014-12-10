@@ -11,12 +11,12 @@ session_start();
 if(!isset($_SESSION['login'])){
 
     //redirect to index.html
-    header(Location:../web/index.html);
+    header("Location:../web/index.html");
 } else{
 
-    if(isset($_POST['account'])){
+    if(isset($_POST['player1_id'])){
 
-        $player1Acc = $_POST['account'];
+        $player1Acc = $_POST['player1_id'];
         $player2ID = $_SESSION['id'];
 
         require_once __DIR__ . '/DBConnect.php';
@@ -31,13 +31,13 @@ if(!isset($_SESSION['login'])){
 
         $sql = "UPDATE lobby SET player2_id=?,status=? WHERE id=?";
 
-        $result = $dbcon->query($sql, array($player2ID, "playing", $resultRo->lobby.id));
+        $result = $dbcon->query($sql, array($player2ID, "playing", $resultRo));
 
         if($result != null || $result != false) {
-            echo "Succeed";
+            echo "true";
 
         } else {
-            echo "Query failed";
+            echo "false";
         }
 
         //DB connection close
