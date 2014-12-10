@@ -14,9 +14,9 @@ if(!isset($_SESSION['login'])){
     header(Location:../web/index.html);
 } else{
 
-    if(isset($_POST['roomID'])){
+    if(isset($_POST['account'])){
 
-        $roomID = $_POST['roomID'];
+        $player1Acc = $_POST['account'];
         $player2ID = $_SESSION['id'];
 
         require_once __DIR__ . '/DBConnect.php';
@@ -24,9 +24,14 @@ if(!isset($_SESSION['login'])){
         //new PDO connection
         $dbcon = new DBConnect();
 
-        $sql = "UPDATE lobby SET player2_id=?,status=playing WHERE id=?";
+        $sql = "SELECT lobby.id FROM lobby,account WHERE lobby.player1_id=account.id and account.account=?";
 
-        $result = $dbcon->query($sql, array($player2ID, $roomID));
+        $resultRo = $dbcon->query($sql, array($player1Acc));
+
+
+        $sql = "UPDATE lobby SET player2_id=?,status=? WHERE id=?";
+
+        $result = $dbcon->query($sql, array($player2ID, "playing", $resultRo));
 
         if($result != null || $result != false) {
             echo "Succeed";
