@@ -29,20 +29,7 @@ if($_SESSION['login'] === true){
                 <div class="list host">host</div>
                 <div class="list state">state</div>
             </div>
-            <div id="row1" class="list-row pool">
-                <div class="list number" id="number1">1</div>
-                <div class="list game-mode" id="game-mode1">normal</div>
-                <div class="list room-name" id="room-name1">This is room name.</div>
-                <div class="list host" id="host1">player name</div>
-                <div class="list state" id="state1">wait/playing</div>
-            </div>
-            <div id="row2" class="list-row pool">
-                <div class="list number" id="number2">2</div>
-                <div class="list game-mode" id="game-mode2">normal</div>
-                <div class="list room-name" id="room-name2">This is room name.</div>
-                <div class="list host" id="host2">player name</div>
-                <div class="list state" id="state2">wait/playing</div>
-            </div>
+
         </div>
         <div id="control">
             <input type="text" id="createRoomName" placeholder="Room name">

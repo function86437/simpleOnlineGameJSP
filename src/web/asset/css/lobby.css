@@ -49,6 +49,7 @@
     float: left;
     width: 760px;
     height: 400px;
+    overflow-y: scroll;
 }
 
 .list-row:hover {
@@ -58,7 +59,7 @@
 
 #user-list {
     border-radius: 10px;
-    float: left;
+    float: right;
     width: 240px;
     height: 400px;
     color: white;
