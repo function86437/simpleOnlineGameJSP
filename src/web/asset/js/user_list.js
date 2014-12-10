@@ -4,13 +4,15 @@
 */
 (function refreshUserList() {
 
+    var object;
+    ajaxImple("../server/showUserList.php","post",object,callback);
     //do something every three seconds
     setInterval(function(){
-        var object;
+
         ajaxImple("../server/showUserList.php","post",object,callback);
 
 
-    },3000);
+    },10000);
 })();
 
 /*
@@ -24,7 +26,7 @@ function callback(response) {
 
     //if already exists,then remove
     if(scroll != null) {
-        userList.removeChild(scroll);
+        scroll.innerHTML = "";
     }
 
     var users = JSON.parse(response);

@@ -40,11 +40,14 @@ if(isset($_POST['account']) && isset($_POST['password'])){
             header('Location:../web/lobby.php');
 
         } else {
+
+            header("refresh:1;url=../web/index.html");
             echo 'Query failed';
         }
 
 
     } else {
+        header("refresh:1;url=../web/index.html");
         echo 'Query failed';
     }
 
