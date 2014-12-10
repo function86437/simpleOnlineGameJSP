@@ -31,7 +31,7 @@ if(!isset($_SESSION['login'])){
 
         $sql = "UPDATE lobby SET player2_id=?,status=? WHERE id=?";
 
-        $result = $dbcon->query($sql, array($player2ID, "playing", $resultRo));
+        $result = $dbcon->query($sql, array($player2ID, "playing", $resultRo->lobby.id));
 
         if($result != null || $result != false) {
             echo "Succeed";
