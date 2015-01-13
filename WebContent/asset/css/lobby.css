@@ -1,0 +1,108 @@
+
+
+.list {
+    float: left;
+    margin: 10px;
+    color: white;
+
+}
+#colum {
+    width: auto;
+
+}
+
+#room-panel {
+    min-height: 500px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.7);
+    width: 1100px;
+    position: relative;
+}
+
+.number {
+    width: 60px;
+    text-align: center;
+}
+
+.game-mode {
+    width: 100px;
+    text-align: center;
+}
+
+.room-name {
+    width: 200px;
+    text-align: center;
+}
+
+.host {
+    width: 150px;
+    text-align: center;
+}
+
+.state {
+    width: 100px;
+    text-align: center;
+}
+
+#room-list {
+    float: left;
+    width: 760px;
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.list-row:hover {
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+}
+
+#user-list {
+    border-radius: 10px;
+    float: right;
+    width: 240px;
+    height: 400px;
+    color: white;
+    padding: 20px;
+    margin: 30px;
+    background: rgba(255,255,255,0.15);
+}
+
+#scroll {
+    padding-left: 10px;
+    width: 230px;
+    height: 80%;
+    overflow-y: scroll;
+}
+#scroll>p:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+#user-list-title {
+    height: 10%;
+}
+
+#control {
+    height: 80px;
+    width: 740px;
+    padding: 10px;
+    position: absolute;
+    bottom: 0px;
+}
+#control > input{
+    border: 2px solid white;
+    background: none;
+    color: white;
+    height: 30px;
+    border-radius: 10px;
+    padding-left:   10px;
+}
+
+#logout {
+    float: right;
+}
+
+#row {
+    margin-top: 25px;
+    margin-bottom: 10px;
+}

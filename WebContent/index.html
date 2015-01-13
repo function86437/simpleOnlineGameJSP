@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Online Game</title>
+    <link rel="stylesheet" href="asset/css/main.css">
+    <link rel="stylesheet" href="asset/css/index.css">
+    <script type="text/javascript" src="asset/js/md5.js"></script>
+    <script type="text/javascript" src="asset/js/generalAjax.js"></script>
+    <script type="text/javascript" src="asset/js/index.js"></script>
+
+</head>
+
+<body>
+    <div id="title">Simple Online Game</div>
+    <div id="login">
+        <form id="login-form" action="../server/verifyAccount.php" method="post">
+            <input type="text" name="account" placeholder="Account">
+            <input type="password" name="password" placeholder="Password">
+            <button type="button" onclick="login();">LOGIN</button>or
+            <button type="button" onclick="myFunction();">SIGN UP</button>
+        </form>
+    </div>
+    <br>
+    <div id="signup">
+        <form id="signup-form">
+            <h1>註冊帳號</h1>
+            <table>
+                <tr>
+                    <td>帳號名稱</td>
+                    <td>
+                        <input type="text" name="account" placeholder="Account">
+                    </td>
+                </tr>
+                <tr>
+                    <td>密碼</td>
+                    <td>
+                        <input type="password" name="password" placeholder="Password">
+                    </td>
+                </tr>
+                <tr>
+                    <td>確認密碼</td>
+                    <td>
+                        <input type="password" name="check-password" placeholder="Check Password">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>
+                        <input type="email" name="email" placeholder="Email">
+                    </td>
+                </tr>
+                <tr>
+                    <td>暱稱</td>
+                    <td>
+                        <input type="text" name="nickname" placeholder="Nickname">
+                    </td>
+                </tr>
+                <tr>
+                    <td>生日</td>
+                    <td>
+                        <input type="date" name="birthday" placeholder="Birthday">
+                    </td>
+                </tr>
+                <tr>
+                    <td>性別</td>
+                    <td>
+                        <select name="gender" id="select-gender">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:right;">
+                        <button id="signupBtn" type="button">SIGN UP</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div class="alert">
+        <div id="alert-box">
+            <div id="alert-title"></div>
+            <button id="alert-btn">OK</button>
+        </div>
+    </div>
+</body>
+
+</html>
